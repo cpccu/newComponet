@@ -3,7 +3,7 @@ import InstitudeInfo from "./../../../data/institude.json";
 export default function Header() {
   return (
     <header
-      className={` bg-blue-950 hidden px-16 lg:px-28 md:flex text-white justify-between items-center`}
+      className={` bg-blue-950 hidden md:flex text-white justify-between items-center padding`}
     >
       <div className="flex gap-5 font-semibold text-sm">
         <p>Email: {InstitudeInfo?.email}</p>

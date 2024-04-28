@@ -31,7 +31,7 @@ export default function NavBar() {
     <main
       className={`${
         fixed && "  md:sticky shadow-xl"
-      } sticky top-0 md:static transition-all  duration-1000 z-50 bg-white flex items-center justify-between px-8 md:px-14 lg:px-28`}
+      } sticky top-0 md:static transition-all  duration-1000 z-50 bg-white flex items-center justify-between padding`}
     >
       {/* logo and name start */}
       <section className="flex items-center justify-center gap-2 py-2 lg:py-4">
