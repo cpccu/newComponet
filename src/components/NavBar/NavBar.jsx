@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import NavItem from "./../../../data/navBar.json";
 import NavOpen from "./../../assets/icons/navOpen.svg";
 import NavClose from "./../../assets/icons/navClose.svg";
 import InstitudeInfo from "./../../../data/institude.json";
 
 export default function NavBar() {
+  const navigate = useNavigate();
   const [fixed, setFixed] = useState(false);
   const [open, setOpen] = useState(false);
 
   const navHandler = () => {
     setOpen((prev) => !prev);
+  };
+
+  const goHome = () => {
+    goTop();
+    return navigate("/");
   };
 
   const goTop = () => {
@@ -43,7 +49,10 @@ export default function NavBar() {
       } sticky top-0 md:static transition-all duration-1000 z-50 bg-white flex items-center justify-between padding`}
     >
       {/* logo and name start */}
-      <section className="flex items-center justify-center gap-2 py-2 lg:py-4">
+      <section
+        onClick={goHome}
+        className="flex items-center justify-center gap-2 py-2 lg:py-4 cursor-default"
+      >
         <img
           className="h-12"
           src={InstitudeInfo?.img}
