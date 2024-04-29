@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <section className="lg:h-0 relative h-[calc(100vh-60px)]">
+      <section className="lg:h-0 h-full relative">
         <EventLayout
           clName={
-            "my-52 mb-52 md:mx-4 lg:mt-0 lg:absolute lg:left-[11rem] lg:right-[11rem] -top-[8rem]"
+            " mx-2 my-14 md:mx-4 md:my-16 lg:mt-0 lg:absolute lg:left-[7rem] lg:right-[7rem] lg:-top-[7rem] xl:left-[11rem] xl:right-[11rem] xl:-top-[8rem]"
           }
         />
       </section>

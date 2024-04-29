@@ -52,7 +52,7 @@ const EventLayout = ({ clName }) => {
   return (
     <div
       className={cn(
-        "text-white bg-header relative z-30 md:px-10 md:pt-10 md:pb-8 lg:py-12 lg:pt-12 lg:pb-10 lg:px-12 ",
+        "text-white bg-header relative z-30 px-5 pt-5 pb-3 md:px-10 md:pt-10 md:pb-8 lg:py-12 lg:pt-12 lg:pb-10 lg:px-12 ",
         clName
       )}
     >
