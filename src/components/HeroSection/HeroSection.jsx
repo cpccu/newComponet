@@ -3,7 +3,7 @@ import Hero from "./../../../data/Hero.json";
 
 export default function HeroSection() {
   return (
-    <main className=" bgIMG padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] md:pb-[10rem] gap-8 h-[calc(100vh-60px)] lg:h-[calc(100vh-120px)] cursor-default">
+    <main className=" bgIMG padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] md:pb-[13rem] gap-8 h-[calc(100vh-60px)] lg:h-[calc(100vh-120px)] cursor-default">
       <section className="flex flex-col items-center md:items-start">
         <h1 className="font-extrabold capitalize text-[2.3rem] md:text-[3.8rem] lg:text-[5rem]">
           {Hero?.header}

@@ -50,10 +50,15 @@ const EventLayout = ({ clName }) => {
   }, [data]);
 
   return (
-    <div className={cn("text-white bg-header relative z-30 ", clName)}>
+    <div
+      className={cn(
+        "text-white bg-header relative z-30 md:px-10 md:pt-10 md:pb-8 lg:py-12 lg:pt-12 lg:pb-10 lg:px-12 ",
+        clName
+      )}
+    >
       <section
         ref={slider}
-        className="flex w-full h-full overflow-x-auto EventScroll scroll-smooth snap-mandatory snap-x"
+        className="flex overflow-x-auto EventScroll scroll-smooth snap-mandatory snap-x"
       >
         {data &&
           data.map((item, index) => (
@@ -79,7 +84,7 @@ const EventLayout = ({ clName }) => {
       </section>
 
       <section className="absolute -top-8 left-0 right-0 flex items-center justify-center lg:justify-end">
-        <div className="text-2xl md:text-3xl font-bold text-gray-900 bg-white px-8 py-3 shadow-xl lg:mr-12">
+        <div className="text-2xl md:text-3xl font-bold text-gray-900 bg-white px-8 py-3 lg:mr-12  shadow-xl">
           Upcoming Event
         </div>
       </section>

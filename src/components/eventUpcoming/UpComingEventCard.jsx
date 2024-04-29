@@ -9,7 +9,7 @@ const UpComingEventCard = ({ data, clName }) => {
         clName
       )}
     >
-      <section className="lg:col-span-3 h-[300px] lg:h-full">
+      <section className="lg:col-span-3 lg:h-full">
         <div className="h-[82%]">
           <img
             className="h-full w-full object-cover"
