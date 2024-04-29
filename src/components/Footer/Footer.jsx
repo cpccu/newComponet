@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <main></main>;
+  return (
+    <main className="h-screen">
+      <div></div>
+    </main>
+  );
 }

@@ -50,12 +50,7 @@ const EventLayout = ({ clName }) => {
   }, [data]);
 
   return (
-    <div
-      className={cn(
-        "text-white bg-header mx-24  relative px-3 py-3 md:px-10 md:pt-10 md:pb-7",
-        clName
-      )}
-    >
+    <div className={cn("text-white bg-header relative z-30 ", clName)}>
       <section
         ref={slider}
         className="flex w-full h-full overflow-x-auto EventScroll scroll-smooth snap-mandatory snap-x"
