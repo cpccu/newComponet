@@ -6,7 +6,7 @@ body {
   scroll-behavior: smooth;
 }
 .padding {
-  @apply px-[.6rem] md:px-[2rem] lg:px-[7rem]  xl:px-[10rem];
+  @apply px-3 md:px-[3rem] lg:px-[5rem] xl:px-[12rem];
 }
 .trans {
   @apply transition-all duration-300;

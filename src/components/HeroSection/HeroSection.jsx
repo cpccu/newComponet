@@ -3,16 +3,16 @@ import Hero from "./../../../data/Hero.json";
 
 export default function HeroSection() {
   return (
-    <main className=" bgIMG padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] lg:pb-[13rem] gap-8 h-[calc(100vh-60px)] lg:h-[calc(100vh-120px)] cursor-default">
+    <main className=" bgIMG padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] gap-11 lg:gap-10 h-[calc(100vh-60px)] md:pb-[7rem] lg:pb-[16rem] lg:h-svh cursor-default">
       <section className="flex flex-col items-center md:items-start">
-        <h1 className="font-extrabold capitalize text-[2.3rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem]">
+        <h1 className="font-extrabold capitalize text-[2.3rem] md:text-[4rem] lg:text-[4.5rem]">
           {Hero?.header}
         </h1>
         <h3 className="text-[1.7rem] md:text-[1.9rem] lg:text-[2rem] text-amber-300">
           {Hero?.secondheader}
         </h3>
       </section>
-      <p className="text-md md:text-xl lg:text-[1.2rem] text-center md:text-left  leading-7">
+      <p className="text-md md:text-lg lg:text-[1.1rem] text-center md:text-left  leading-7">
         {Hero?.context}
       </p>
       <div className="flex gap-5">
