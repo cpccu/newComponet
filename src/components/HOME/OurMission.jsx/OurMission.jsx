@@ -1,5 +1,3 @@
-import Data from "./../../../data/OurMission.json";
-
 export default function OurMission() {
   return (
     <main className="h-screen lg:flex items-center">

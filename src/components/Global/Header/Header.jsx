@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import InstitudeInfo from "./../../../data/institude.json";
+import InstitudeInfo from "../../../../data/institude.json";
 
 export default function Header() {
   return (

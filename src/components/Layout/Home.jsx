@@ -1,7 +1,8 @@
-import HeroSection from "../HeroSection/HeroSection";
-import OurMission from "../OurMission.jsx/OurMission";
-import OurResponsibility from "../OurResponsibility/OurResponsibility";
-import EventLayout from "./../eventUpcoming/EventLayout";
+import HeroSection from "./../HOME/HeroSection/HeroSection";
+import EventLayout from "./../HOME/eventUpcoming/EventLayout";
+import OurMission from "./../HOME/OurMission.jsx/OurMission";
+import OurResponsibility from "./../HOME/OurResponsibility/OurResponsibility";
+import Count from "../HOME/Count/Count";
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       </section>
       <OurMission />
       <OurResponsibility />
+      <Count />
+
       <section className=" h-screen bg-red-300"></section>
       <section className=" h-screen bg-green-300"></section>
       <section className=" h-screen bg-red-300"></section>

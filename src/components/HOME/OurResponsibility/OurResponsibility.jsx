@@ -1,4 +1,4 @@
-import Data from "./../../../data/OurResponsibility.json";
+import Data from "../../../../data/OurResponsibility.json";
 
 export default function OurResponsibility() {
   return (

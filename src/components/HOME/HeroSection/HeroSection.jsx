@@ -1,5 +1,5 @@
 import "./Hero.css";
-import Hero from "./../../../data/Hero.json";
+import Hero from "../../../../data/Hero.json";
 
 export default function HeroSection() {
   return (

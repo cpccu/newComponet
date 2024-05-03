@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import UpComingEventCard from "./UpComingEventCard";
 import "./Event.css";
-import cn from "../../../lib/cn";
+import cn from "./../../../../lib/cn.js";
 
 const EventLayout = ({ clName }) => {
   const slider = useRef(null);
