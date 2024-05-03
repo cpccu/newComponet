@@ -12,13 +12,14 @@ export default function HeroSection() {
           {Hero?.secondheader}
         </h3>
       </section>
-      <p className="text-md md:text-lg lg:text-[1.1rem] text-center md:text-left  leading-7">
+      <p className="conText text-md text-center md:text-left text-white/75">
         {Hero?.context}
       </p>
       <div className="flex gap-5">
         <button className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-header hover:bg-white hover:text-black trans">
           {Hero?.btn1Text}
         </button>
+
         <button className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-white text-black hover:bg-header hover:text-white trans">
           {Hero?.btn2Text}
         </button>

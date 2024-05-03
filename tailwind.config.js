@@ -15,6 +15,7 @@ export default {
         primary: "#F35F3B",
         header: "#3b60c9",
         footer: "#333437",
+        responsibility: "#ECF1F5",
         textWhite: "E7E7E7",
       },
       fontFamily: {
