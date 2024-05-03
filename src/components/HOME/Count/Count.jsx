@@ -12,7 +12,9 @@ export default function Count() {
         <img className="h-16" src={useIMG} alt="user" />
         <div className="flex flex-col items-start justify-center">
           <h3 className="text-5xl font-custom font-thin text-white/90">
-            {Data?.member}
+            {Data?.member / 1000 > 1
+              ? Math.floor(Data?.member / 1000) + "K+"
+              : Data.member}
           </h3>
           <p className="text-xl">Members</p>
         </div>
@@ -24,7 +26,9 @@ export default function Count() {
         <img className="h-16" src={pictureIMG} alt="picture" />
         <div className="flex flex-col items-start justify-center">
           <h3 className="text-5xl font-custom font-thin text-white/90">
-            {Data?.photo}
+            {Data?.photo / 1000 > 1
+              ? Math.floor(Data?.photo / 1000) + "K+"
+              : Data.photo}
           </h3>
           <p className="text-xl">Photos</p>
         </div>
@@ -36,7 +40,9 @@ export default function Count() {
         <img className="h-16" src={eventIMG} alt="event" />
         <div className="flex flex-col items-start justify-center">
           <h3 className="text-5xl font-custom font-thin text-white/90">
-            {Data?.event}
+            {Data?.event / 1000 > 1
+              ? Math.floor(Data?.event / 1000) + "K+"
+              : Data.event}
           </h3>
           <p className="text-xl">Events</p>
         </div>
@@ -48,7 +54,9 @@ export default function Count() {
         <img className="h-16" src={medalIMG} alt="medal" />
         <div className="flex flex-col items-start justify-center">
           <h3 className="text-5xl font-custom font-thin text-white/90">
-            {Data?.award}
+            {Data?.award / 1000 > 1
+              ? Math.floor(Data?.award / 1000) + "K+"
+              : Data.award}
           </h3>
           <p className="text-xl">Awards</p>
         </div>
