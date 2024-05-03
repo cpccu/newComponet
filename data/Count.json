@@ -1,3 +1,6 @@
 {
-  "img": "./../../../assets/icons/user.svg"
+  "member": 101,
+  "photo": 50,
+  "event": 22,
+  "award": 3
 }
