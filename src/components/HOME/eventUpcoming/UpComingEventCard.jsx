@@ -18,7 +18,7 @@ const UpComingEventCard = ({ data, clName }) => {
           />
         </div>
         <div className="h-[14%] bg-white text-gray-600 text-2xl font-bold flex items-center justify-center">
-          It's
+          It's {data?.date}
         </div>
         <div className="h-[4%] bg-black/50"></div>
       </section>
