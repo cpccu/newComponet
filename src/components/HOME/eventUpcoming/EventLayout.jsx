@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import UpComingEventCard from "./UpComingEventCard";
 import "./Event.css";
 import cn from "./../../../../lib/cn.js";
@@ -21,7 +23,7 @@ const EventLayout = ({ clName }) => {
   };
 
   useEffect(() => {
-    const url = "./../../../data/upcomingEvent.json";
+    const url = "./../../../../data/upcomingEvent.json";
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
@@ -68,18 +70,18 @@ const EventLayout = ({ clName }) => {
           ))}
       </section>
 
-      <section className="absolute bottom-2 right-2 bg-white/25">
+      <section className="absolute bottom-2 right-2 flex gap-1">
         <button
           onClick={goLeft}
-          className="hover:bg-white px-5 py-2 trans font-bold hover:text-gray-900"
+          className="hover:bg-white flex items-center justify-center px-5 py-2 trans font-bold hover:text-gray-900 bg-headerHover"
         >
-          Left
+          <FontAwesomeIcon className="h-6" icon={faAngleLeft} />
         </button>
         <button
           onClick={goRight}
-          className="hover:bg-white px-5 py-2 trans font-bold hover:text-gray-900"
+          className="hover:bg-white flex items-center justify-center px-5 py-2 trans font-bold hover:text-gray-900 bg-headerHover"
         >
-          Right
+          <FontAwesomeIcon className=" rotate-180 h-6" icon={faAngleLeft} />
         </button>
       </section>
 
