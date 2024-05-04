@@ -18,8 +18,6 @@ export default function Home() {
       <OurMission />
       <OurResponsibility />
       <Count />
-
-      <section className=" h-screen bg-red-300"></section>
       <section className=" h-screen bg-green-300"></section>
     </main>
   );

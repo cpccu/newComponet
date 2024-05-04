@@ -4,13 +4,13 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
 import InstituteInfo from "./../../../../data/institude.json";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <>
-      <main className="bg-count text-white padding grid justify-between gap-5 md:grid-cols-2 lg:grid-cols-12 py-10 md:py-16 lg:py-24">
+      <main className="bg-count text-white padding grid justify-between gap-y-8 md:gap-y-12 md:gap-x-6 md:grid-cols-2 lg:grid-cols-12 py-10 md:py-16 lg:py-24">
         <FooterInfo />
         <Touch />
         <section className="lg:col-span-3">3</section>
@@ -19,7 +19,7 @@ export default function Footer() {
 
       {/* rights section start */}
       <footer className="bg-header text-white/90 h-16 flex items-center justify-center">
-        &copy;2024 City University, All Rights Reserved
+        &copy;{InstituteInfo?.rights}
       </footer>
       {/* rights section end */}
     </>
@@ -64,7 +64,7 @@ export function FooterInfo() {
 export function Touch() {
   return (
     <section className="lg:col-span-3">
-      <h1 className="text-2xl font-bold mb-9">Get In Touch</h1>
+      <h1 className="text-2xl font-bold mb-3 md:mb-9">Get In Touch</h1>
       <main className="flex flex-col gap-6">
         <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed</p>
 
@@ -85,24 +85,48 @@ export function Touch() {
 
         <section className="flex gap-5">
           {/* facebook start */}
-          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-            <FontAwesomeIcon className="h-5" icon={faFacebookF} />
-          </button>
+          <Link
+            to={InstituteInfo?.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+              <FontAwesomeIcon className="h-5" icon={faFacebookF} />
+            </button>
+          </Link>
           {/* facebook end */}
           {/* whatsapp start */}
-          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-            <FontAwesomeIcon className="h-5" icon={faWhatsapp} />
-          </button>
+          <Link
+            to={InstituteInfo?.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+              <FontAwesomeIcon className="h-5" icon={faWhatsapp} />
+            </button>
+          </Link>
           {/* whatsapp end */}
           {/* linkedin start */}
-          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-            <FontAwesomeIcon className="h-5" icon={faLinkedinIn} />
-          </button>
+          <Link
+            to={InstituteInfo?.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+              <FontAwesomeIcon className="h-5" icon={faLinkedinIn} />
+            </button>
+          </Link>
           {/* linkedin end */}
           {/* github start */}
-          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-            <FontAwesomeIcon className="h-5" icon={faGithub} />
-          </button>
+          <Link
+            to={InstituteInfo?.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+              <FontAwesomeIcon className="h-5" icon={faGithub} />
+            </button>
+          </Link>
           {/* github end */}
         </section>
       </main>
