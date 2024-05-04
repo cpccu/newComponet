@@ -4,17 +4,18 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import InstituteInfo from "./../../../../data/institude.json";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <>
-      <main className="bg-count text-white padding grid justify-between gap-y-8 md:gap-y-12 md:gap-x-6 md:grid-cols-2 lg:grid-cols-12 py-10 md:py-16 lg:py-24">
+      <main className="bg-count text-white padding grid justify-between gap-y-8 md:gap-y-12 md:gap-x-6 grid-cols-2 lg:grid-cols-11 py-10 md:py-16 lg:py-24">
         <FooterInfo />
         <Touch />
-        <section className="lg:col-span-3">3</section>
-        <section className="lg:col-span-1">4</section>
+        <UsefullLink />
+        <OrgLink />
       </main>
 
       {/* rights section start */}
@@ -30,7 +31,7 @@ export default function Footer() {
 
 export function FooterInfo() {
   return (
-    <main className="flex flex-col gap-5 lg:col-span-4">
+    <main className="flex flex-col gap-5 col-span-2 md:col-span-1 lg:col-span-4">
       <section className="flex items-center gap-2">
         <img
           className="h-14 filter grayscale"
@@ -63,7 +64,7 @@ export function FooterInfo() {
 
 export function Touch() {
   return (
-    <section className="lg:col-span-3">
+    <section className="col-span-2 md:col-span-1 lg:col-span-3">
       <h1 className="text-2xl font-bold mb-3 md:mb-9">Get In Touch</h1>
       <main className="flex flex-col gap-6">
         <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed</p>
@@ -135,3 +136,63 @@ export function Touch() {
 }
 
 // Get In Touch section end
+
+// Usefull Link start
+
+export function UsefullLink() {
+  return (
+    <section className="lg:col-span-2">
+      <h1 className="text-2xl font-bold mb-3 md:mb-9">
+        {InstituteInfo?.useFullLink.header}
+      </h1>
+      <ul className="flex flex-col gap-[.7rem] ml-5">
+        {InstituteInfo?.useFullLink.element.map((item, index) => (
+          <Link to={item?.url} target="_blank" rel="noopener noreferrer">
+            <li
+              key={index}
+              className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans"
+            >
+              <FontAwesomeIcon
+                className="rotate-180 pb-[.3rem]"
+                icon={faAngleLeft}
+              />
+              <p>{item?.linkName}</p>
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+// Usefull Link end
+
+// org link start
+
+export function OrgLink() {
+  return (
+    <section className="lg:col-span-2">
+      <h1 className="text-2xl font-bold mb-3 md:mb-9">
+        {InstituteInfo?.org.header}
+      </h1>
+      <ul className="flex flex-col gap-[.7rem] ml-5">
+        {InstituteInfo?.org.element.map((item, index) => (
+          <Link to={item?.url} target="_blank" rel="noopener noreferrer">
+            <li
+              key={index}
+              className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans"
+            >
+              <FontAwesomeIcon
+                className="rotate-180 pb-[.3rem]"
+                icon={faAngleLeft}
+              />
+              <p>{item?.linkName}</p>
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+// org link end
