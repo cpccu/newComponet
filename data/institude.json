@@ -9,5 +9,55 @@
   "whatsapp": "https://chat.whatsapp.com/BxznCy84PILHEcUBxE8orM",
   "linkedin": "https://www.linkedin.com/groups/14380055/",
   "github": "https://github.com/cpccu",
+  "useFullLink": {
+    "header": "Usefull Link",
+    "element": [
+      {
+        "linkName": "code force",
+        "url": ""
+      },
+      {
+        "linkName": "Hacker rank",
+        "url": ""
+      },
+      {
+        "linkName": "Becrownd",
+        "url": ""
+      },
+      {
+        "linkName": "Earth rank",
+        "url": ""
+      },
+      {
+        "linkName": "code force",
+        "url": ""
+      }
+    ]
+  },
+  "org": {
+    "header": "University",
+    "element": [
+      {
+        "linkName": "City university",
+        "url": ""
+      },
+      {
+        "linkName": "Home page",
+        "url": ""
+      },
+      {
+        "linkName": "All pages",
+        "url": ""
+      },
+      {
+        "linkName": "code force",
+        "url": ""
+      },
+      {
+        "linkName": "Footer page",
+        "url": ""
+      }
+    ]
+  },
   "rights": "2024 City University, All Rights Reserved"
 }
