@@ -25,6 +25,8 @@ export default function Footer() {
   );
 }
 
+// Get In Touch section start
+
 export function Touch() {
   return (
     <section>
@@ -67,3 +69,5 @@ export function Touch() {
     </section>
   );
 }
+
+// Get In Touch section end
