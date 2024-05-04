@@ -3,6 +3,7 @@ import EventLayout from "./../HOME/eventUpcoming/EventLayout";
 import OurMission from "./../HOME/OurMission.jsx/OurMission";
 import OurResponsibility from "./../HOME/OurResponsibility/OurResponsibility";
 import Count from "../HOME/Count/Count";
+import GallerySection from "../HOME/GallerySection/GallerySection";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <OurMission />
       <OurResponsibility />
       <Count />
-      <section className=" h-screen bg-green-300"></section>
+      <GallerySection />
     </main>
   );
 }
