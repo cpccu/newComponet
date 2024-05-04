@@ -60,6 +60,7 @@ export function FooterInfo() {
 // Get In Touch section start
 
 export function Touch() {
+  const Allicon = [faFacebookF, faWhatsapp, faLinkedinIn, faGithub];
   return (
     <section className="col-span-2 md:col-span-1 lg:col-span-3">
       <h1 className="text-2xl font-bold mb-3 md:mb-9">
@@ -84,50 +85,18 @@ export function Touch() {
         </form>
 
         <section className="flex gap-5">
-          {/* facebook start */}
-          <Link
-            to={InstituteInfo?.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-              <FontAwesomeIcon className="h-5" icon={faFacebookF} />
-            </button>
-          </Link>
-          {/* facebook end */}
-          {/* whatsapp start */}
-          <Link
-            to={InstituteInfo?.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-              <FontAwesomeIcon className="h-5" icon={faWhatsapp} />
-            </button>
-          </Link>
-          {/* whatsapp end */}
-          {/* linkedin start */}
-          <Link
-            to={InstituteInfo?.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-              <FontAwesomeIcon className="h-5" icon={faLinkedinIn} />
-            </button>
-          </Link>
-          {/* linkedin end */}
-          {/* github start */}
-          <Link
-            to={InstituteInfo?.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-              <FontAwesomeIcon className="h-5" icon={faGithub} />
-            </button>
-          </Link>
-          {/* github end */}
+          {InstituteInfo?.media.map((item, index) => (
+            <Link
+              key={index}
+              to={item?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+                <FontAwesomeIcon className="h-5" icon={Allicon[index]} />
+              </button>
+            </Link>
+          ))}
         </section>
       </main>
     </section>
@@ -146,11 +115,13 @@ export function UsefullLink() {
       </h1>
       <ul className="flex flex-col gap-[.7rem] ml-5">
         {InstituteInfo?.useFullLink.element.map((item, index) => (
-          <Link to={item?.url} target="_blank" rel="noopener noreferrer">
-            <li
-              key={index}
-              className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans"
-            >
+          <Link
+            key={index}
+            to={item?.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans">
               <FontAwesomeIcon
                 className="rotate-180 pb-[.3rem]"
                 icon={faAngleLeft}
@@ -176,11 +147,13 @@ export function OrgLink() {
       </h1>
       <ul className="flex flex-col gap-[.7rem] ml-5">
         {InstituteInfo?.org.element.map((item, index) => (
-          <Link to={item?.url} target="_blank" rel="noopener noreferrer">
-            <li
-              key={index}
-              className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans"
-            >
+          <Link
+            key={index}
+            to={item?.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li className="flex items-center gap-4 cursor-pointer hover:text-header hover:translate-x-2 trans">
               <FontAwesomeIcon
                 className="rotate-180 pb-[.3rem]"
                 icon={faAngleLeft}
