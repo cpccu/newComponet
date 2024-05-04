@@ -4,10 +4,10 @@ export default function OurResponsibility() {
   return (
     <main className="padding bg-responsibility flex flex-col gap-y-16 py-14 md:py-16 lg:py-20">
       <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-800">
-        Our Responsibility
+        {Data?.header}
       </h1>
       <section className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-x-5 gap-y-12 lg:gap-8">
-        {Data.map((item, index) => (
+        {Data?.element.map((item, index) => (
           <CardRes key={index} item={item} />
         ))}
       </section>
