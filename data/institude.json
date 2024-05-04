@@ -9,6 +9,15 @@
   "whatsapp": "https://chat.whatsapp.com/BxznCy84PILHEcUBxE8orM",
   "linkedin": "https://www.linkedin.com/groups/14380055/",
   "github": "https://github.com/cpccu",
+
+  "Footer1": {
+    "conText": "We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod tempor incidunt ut et do maga aliqua enim ad minim."
+  },
+
+  "Footer2": {
+    "header": "Get In Touch",
+    "conText": "We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed."
+  },
   "useFullLink": {
     "header": "Usefull Link",
     "element": [

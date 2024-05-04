@@ -45,10 +45,7 @@ export function FooterInfo() {
           <p className="text-sm">{InstituteInfo?.shortName}</p>
         </div>
       </section>
-      <p>
-        We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do
-        eiusmod tempor incidunt ut et do maga aliqua enim ad minim.
-      </p>
+      <p>{InstituteInfo?.Footer1.conText}</p>
 
       <section className="flex flex-col items-start gap-2 font-semibold text-sm">
         <button>Email: {InstituteInfo?.email}</button>
@@ -65,9 +62,11 @@ export function FooterInfo() {
 export function Touch() {
   return (
     <section className="col-span-2 md:col-span-1 lg:col-span-3">
-      <h1 className="text-2xl font-bold mb-3 md:mb-9">Get In Touch</h1>
+      <h1 className="text-2xl font-bold mb-3 md:mb-9">
+        {InstituteInfo?.Footer2.header}
+      </h1>
       <main className="flex flex-col gap-6">
-        <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed</p>
+        <p>{InstituteInfo?.Footer2.conText}</p>
 
         <form
           onSubmit={(e) => e.preventDefault()}
