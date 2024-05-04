@@ -21,8 +21,6 @@ export default function Home() {
 
       <section className=" h-screen bg-red-300"></section>
       <section className=" h-screen bg-green-300"></section>
-      <section className=" h-screen bg-red-300"></section>
-      <section className=" h-screen bg-green-300"></section>
     </main>
   );
 }
