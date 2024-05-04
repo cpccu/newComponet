@@ -1,5 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -36,11 +41,27 @@ export function Touch() {
             <FontAwesomeIcon className="h-5" icon={faPaperPlane} />
           </button>
         </section>
-        <section className="flex justify-between items-center">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
+        <section className="flex gap-5">
+          {/* facebook start */}
+          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+            <FontAwesomeIcon className="h-5" icon={faFacebookF} />
+          </button>
+          {/* facebook end */}
+          {/* whatsapp start */}
+          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+            <FontAwesomeIcon className="h-5" icon={faWhatsapp} />
+          </button>
+          {/* whatsapp end */}
+          {/* linkedin start */}
+          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+            <FontAwesomeIcon className="h-5" icon={faLinkedinIn} />
+          </button>
+          {/* linkedin end */}
+          {/* github start */}
+          <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
+            <FontAwesomeIcon className="h-5" icon={faGithub} />
+          </button>
+          {/* github end */}
         </section>
       </main>
     </section>
