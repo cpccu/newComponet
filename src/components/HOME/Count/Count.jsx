@@ -2,7 +2,7 @@ import useIMG from "./../../../assets/icons/user.svg";
 import pictureIMG from "./../../../assets/icons/picture.svg";
 import eventIMG from "./../../../assets/icons/event.svg";
 import medalIMG from "./../../../assets/icons/medal.svg";
-import Data from "./../../../../data/Count.json";
+import Data from "./../../../../data/home/Count.json";
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 import { useState } from "react";

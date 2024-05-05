@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import NavItem from "../../../../data/navBar.json";
 import NavOpen from "./../../../assets/icons/navOpen.svg";
 import NavClose from "./../../../assets/icons/navClose.svg";
-import InstitudeInfo from "./../../../../data/institude.json";
+import InstitudeInfo from "./../../../../data/global/institude.json";
+import Data from "../../../../data/global/navBar.json";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -124,8 +124,8 @@ export default function NavBar() {
           </section>
           {/* nav link */}
           <ul className="flex flex-col lg:flex-row z-50 mt-10 lg:mt-0">
-            {NavItem &&
-              NavItem.map((item, index) => (
+            {Data &&
+              Data.map((item, index) => (
                 <li key={index}>
                   <NavLink
                     to={item?.path}
