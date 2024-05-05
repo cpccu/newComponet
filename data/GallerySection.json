@@ -1,0 +1,20 @@
+{
+  "header": "Our Gallery",
+  "element": [
+    {
+      "btnText": "All"
+    },
+    {
+      "btnText": "Old memories"
+    },
+    {
+      "btnText": "Event"
+    },
+    {
+      "btnText": "Our Picnic"
+    },
+    {
+      "btnText": "Recent"
+    }
+  ]
+}
