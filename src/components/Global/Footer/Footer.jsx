@@ -48,8 +48,12 @@ export function FooterInfo() {
       <p>{InstituteInfo?.Footer1.conText}</p>
 
       <section className="flex flex-col items-start gap-2 font-semibold text-sm">
-        <button>Email: {InstituteInfo?.email}</button>
-        <button>Hotline: {InstituteInfo?.phone}</button>
+        <Link to={`mailto:${InstituteInfo?.email}`}>
+          <button>Email: {InstituteInfo?.email}</button>
+        </Link>
+        <Link to={`tel:${InstituteInfo?.phone}`}>
+          <button>Hotline: {InstituteInfo?.phone}</button>
+        </Link>
       </section>
     </main>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import NavItem from "../../../../data/navBar.json";
 import NavOpen from "./../../../assets/icons/navOpen.svg";
@@ -9,6 +9,8 @@ export default function NavBar() {
   const navigate = useNavigate();
   const [fixed, setFixed] = useState(false);
   const [open, setOpen] = useState(false);
+  const mobileNav = useRef(null);
+  const mobileNavToggler = useRef(null);
 
   const navHandler = () => {
     setOpen((prev) => !prev);
@@ -26,6 +28,11 @@ export default function NavBar() {
     });
   };
 
+  const goAnotherpage = () => {
+    goTop();
+    setOpen(false);
+  };
+
   useEffect(() => {
     const scrollBar = () => {
       if (Math.ceil(window.scrollY) > 180) {
@@ -35,10 +42,24 @@ export default function NavBar() {
       }
     };
 
+    const mobileNavClose = (event) => {
+      if (
+        mobileNav.current &&
+        mobileNavToggler.current &&
+        !mobileNav.current.contains(event.target) &&
+        !mobileNavToggler.current.contains(event.target) &&
+        window.innerWidth < 976
+      ) {
+        setOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", scrollBar);
+    window.addEventListener("click", mobileNavClose);
 
     return () => {
       window.removeEventListener("scroll", scrollBar);
+      window.removeEventListener("click", mobileNavClose);
     };
   }, []);
 
@@ -69,13 +90,18 @@ export default function NavBar() {
 
       <section>
         {/* nav link start */}
-        <button onClick={navHandler} className="lg:hidden">
+        <button
+          ref={mobileNavToggler}
+          onClick={navHandler}
+          className="lg:hidden"
+        >
           <img className="h-8 md:h-9" src={open ? NavClose : NavOpen} alt="" />
         </button>
         <nav
+          ref={mobileNav}
           className={`${
             open ? "left-0" : "-left-[70%] md:-left-[40%]"
-          } fixed top-0 bottom-0 w-[70%] md:w-[40%] border bg-white lg:w-full lg:bg-transparent lg:border-none lg:static trans`}
+          } fixed top-0 bottom-0 w-[70%] md:w-[40%] shadow-2xl bg-white lg:shadow-none lg:w-full lg:bg-transparent lg:static trans z-50`}
         >
           <section className="flex py-2 items-center justify-between px-5 md:px-7 lg:py-4 border-b border-gray-600/30 lg:hidden">
             <section className="flex items-center gap-2">
@@ -92,9 +118,9 @@ export default function NavBar() {
               </div>
             </section>
 
-            <button onClick={navHandler}>
+            {/* <button onClick={navHandler}>
               <img className="h-6" src={NavClose} alt="close" />
-            </button>
+            </button> */}
           </section>
           {/* nav link */}
           <ul className="flex flex-col lg:flex-row z-50 mt-10 lg:mt-0">
@@ -110,7 +136,7 @@ export default function NavBar() {
                           : "hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
                       } block px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold`
                     }
-                    onClick={goTop}
+                    onClick={goAnotherpage}
                   >
                     {item?.page}
                   </NavLink>

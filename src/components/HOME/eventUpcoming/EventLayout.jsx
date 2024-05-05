@@ -42,7 +42,7 @@ const EventLayout = ({ clName }) => {
     }
   }, [data]);
 
-  return (
+  return data ? (
     <div
       className={cn(
         "text-white bg-header relative z-30 px-5 pt-5 pb-3 md:px-10 md:pt-10 md:pb-8 lg:py-12 lg:pt-12 lg:pb-10 lg:px-12 ",
@@ -53,13 +53,11 @@ const EventLayout = ({ clName }) => {
         ref={slider}
         className="flex overflow-x-auto EventScroll scroll-smooth snap-mandatory snap-x"
       >
-        {data
-          ? data.map((item, index) => (
-              <div key={index} className="w-full shrink-0 snap-center">
-                <UpComingEventCard data={item} />
-              </div>
-            ))
-          : null}
+        {data.map((item, index) => (
+          <div key={index} className="w-full shrink-0 snap-center">
+            <UpComingEventCard data={item} />
+          </div>
+        ))}
       </section>
 
       <section className="absolute bottom-2 right-2 flex gap-1">
@@ -83,7 +81,7 @@ const EventLayout = ({ clName }) => {
         </div>
       </section>
     </div>
-  );
+  ) : null;
 };
 
 export default EventLayout;
