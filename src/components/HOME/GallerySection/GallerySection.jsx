@@ -1,3 +1,4 @@
+import GalleryCard from "../../Global/GalleryCard/GalleryCard";
 import Data from "./../../../../data/home/GallerySection.json";
 
 export default function GallerySection() {
@@ -20,6 +21,9 @@ export default function GallerySection() {
           </button>
         ))}
       </div>
+      <section className="padding">
+        <GalleryCard />
+      </section>
     </section>
   );
 }
