@@ -4,11 +4,11 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import UpComingEventCard from "./UpComingEventCard";
 import "./Event.css";
 import cn from "./../../../../lib/cn.js";
+import data from "./../../../../data/upcomingEvent.json";
 
 const EventLayout = ({ clName }) => {
   const slider = useRef(null);
   const [slidePx, setSlidePx] = useState(0);
-  const [data, setData] = useState(null);
 
   const goLeft = () => {
     if (slider.current) {
@@ -21,15 +21,6 @@ const EventLayout = ({ clName }) => {
       slider.current.scrollLeft += slidePx;
     }
   };
-
-  useEffect(() => {
-    const url = "./../../../../data/upcomingEvent.json";
-    fetch(url)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res);
-      });
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,12 +53,13 @@ const EventLayout = ({ clName }) => {
         ref={slider}
         className="flex overflow-x-auto EventScroll scroll-smooth snap-mandatory snap-x"
       >
-        {data &&
-          data.map((item, index) => (
-            <div key={index} className="w-full shrink-0 snap-center">
-              <UpComingEventCard data={item} />
-            </div>
-          ))}
+        {data
+          ? data.map((item, index) => (
+              <div key={index} className="w-full shrink-0 snap-center">
+                <UpComingEventCard data={item} />
+              </div>
+            ))
+          : null}
       </section>
 
       <section className="absolute bottom-2 right-2 flex gap-1">
