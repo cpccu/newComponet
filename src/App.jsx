@@ -5,16 +5,6 @@ import Event from "./components/Layout/Event";
 import ComingSoon from "./components/ComingSoon";
 import { useEffect } from "react";
 
-function ScrollToTop() {
-  const loc = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [loc.pathname]);
-
-  return null;
-}
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -30,4 +20,14 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   );
+}
+
+export function ScrollToTop() {
+  const loc = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [loc.pathname]);
+
+  return null;
 }
