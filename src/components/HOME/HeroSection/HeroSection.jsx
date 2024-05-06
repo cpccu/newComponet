@@ -1,9 +1,16 @@
-import "./Hero.css";
 import Hero from "../../../../data/home/Hero.json";
 
 export default function HeroSection() {
   return (
-    <main className=" bgIMG padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] gap-11 lg:gap-10 md:pb-[7rem] lg:pb-[16rem] cursor-default h-[calc(100svh-50px)] md:h-full">
+    <main
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.ibb.co/nnt0RRZ/pexels-buro-millennial-636760-1438072.jpg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="padding text-white flex flex-col justify-center items-center md:items-start py-[3rem] gap-11 lg:gap-10 md:pb-[7rem] lg:pb-[16rem] cursor-default h-[calc(100svh-50px)] md:h-full"
+    >
       <section className="flex flex-col items-center md:items-start">
         <h1 className="font-extrabold capitalize text-[2.3rem] md:text-[4rem] lg:text-[4.5rem]">
           {Hero?.header}
