@@ -6,10 +6,12 @@ export default function GalleryCard({ Data }) {
       {Data.map((item, index) => (
         <div key={index} className="w-full h-[16rem] relative group">
           <img
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-0 transition-opacity duration-500  ease-in-out"
             loading="lazy"
             src={item?.img}
             alt={`gIMG${index}`}
+            style={{ transitionDelay: `${index * 50}ms` }} // Delay transition for each image
+            onLoad={(e) => e.target.classList.add("opacity-100")} // Add opacity class when image is loaded
           />
           <div className="absolute bg-header/85 flex-col justify-around pt-14 px-5 inset-0 flex opacity-0 group-hover:opacity-100 transition-all duration-700">
             <img className="h-14" src={plusIcon} alt="plus" />
