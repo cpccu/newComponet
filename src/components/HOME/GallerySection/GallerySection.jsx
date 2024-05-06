@@ -1,29 +1,36 @@
 import GalleryCard from "../../Global/GalleryCard/GalleryCard";
-import Data from "./../../../../data/home/GallerySection.json";
+import tabBtn from "../../../../data/home/GallerySection.json";
+import Data from "../../../../data/GallaryCard.json";
+import { useEffect, useState } from "react";
 
 export default function GallerySection() {
+  const [Tag, setTag] = useState("all");
+
   return (
     <section className="bg-responsibility padding py-14 md:py-20 lg:py-24">
-      {/* gallery section start */}
+      {/* Gallery section header */}
       <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-800 capitalize">
-        {Data?.header}
+        {tabBtn?.header}
       </h1>
-      {/* gallery section end */}
+
+      {/* Filter buttons */}
       <div className="font-semibold text-sm md:text-lg flex flex-wrap items-center justify-center gap-3 md:gap-5 lg:gap-7 py-7 md:py-14">
-        {Data?.element.map((item, index) => (
+        {tabBtn?.element.map((item, index) => (
           <button
+            onClick={() => setTag(item?.tag)}
             key={index}
-            className={`${
-              index == Data?.element.length - 1 && "hidden"
-            } shrink-0 md:block px-2 md:px-6 lg:px-8 py-2 bg-header/15 hover:bg-header hover:text-white trans`}
+            className={`${index === tabBtn.element.length - 1 ? "hidden" : ""}
+            ${
+              item?.tag == Tag ? "bg-header text-white" : "bg-header/15"
+            } shrink-0 md:block px-2 md:px-6 lg:px-8 py-2  hover:bg-header hover:text-white trans`}
           >
-            {item?.btnText}
+            {item.btnText}
           </button>
         ))}
       </div>
-      <section className="padding">
-        <GalleryCard />
-      </section>
+
+      {/* Gallery cards */}
+      <GalleryCard Data={Data} />
     </section>
   );
 }

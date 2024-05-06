@@ -10,7 +10,7 @@ body {
   @apply px-[1.1em] md:px-[2.5em] lg:px-[2.9em] xl:px-[7em];
 }
 .trans {
-  @apply transition-all duration-300;
+  @apply transition-all duration-500;
 }
 
 .conText {

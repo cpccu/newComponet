@@ -2,19 +2,24 @@
   "header": "Our Gallery",
   "element": [
     {
-      "btnText": "All"
+      "btnText": "All",
+      "tag": "all"
     },
     {
-      "btnText": "Old memories"
+      "btnText": "Old memories",
+      "tag": "old"
     },
     {
-      "btnText": "Event"
+      "btnText": "Event",
+      "tag": "event"
     },
     {
-      "btnText": "Our Picnic"
+      "btnText": "Our Picnic",
+      "tag": "picnic"
     },
     {
-      "btnText": "Recent"
+      "btnText": "Recent",
+      "tag": "recent"
     }
   ]
 }
