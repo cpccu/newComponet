@@ -4,8 +4,16 @@ import Data from "./../../../data/upcomingEvent.json";
 export default function NoticeSection() {
   return (
     <>
-      <header className="bg-red-900 padding flex flex-col items-center justify-center py-14 md:py-16 lg:py-20 gap-4 text-white">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold shrink-0">
+      <header
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="bg-red-900 padding flex flex-col items-center justify-center py-20 md:py-24 lg:py-28 gap-4 text-white"
+      >
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold shrink-0 capitalize">
           Event Header
         </h1>
         <p>
