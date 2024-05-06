@@ -36,7 +36,7 @@ export default function GallerySection() {
               item?.tag.toLowerCase() == Tag.toLowerCase()
                 ? "bg-header text-white"
                 : "bg-header/15"
-            } shrink-0 md:block px-2 md:px-6 lg:px-8 py-2  hover:bg-header hover:text-white trans`}
+            } shrink-0 md:block px-2 md:px-6 lg:px-8 py-2  hover:bg-header hover:text-white trans capitalize`}
           >
             {item.btnText}
           </button>
