@@ -1,3 +1,9 @@
+import NoticeSection from "../EVENT/NoticeSection";
+
 export default function Event() {
-  return <main></main>;
+  return (
+    <main>
+      <NoticeSection />
+    </main>
+  );
 }

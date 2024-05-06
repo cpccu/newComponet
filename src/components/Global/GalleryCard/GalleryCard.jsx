@@ -34,17 +34,14 @@ export default function GalleryCard({ Data }) {
               onLoad={(e) => e.target.classList.add("opacity-100")} // Add opacity class when image is loaded
             />
             {/* hover detail and full start */}
-            <div
-              className="absolute bg-header/85 flex-col  justify-end items-center opacity-0 group-hover:justify-between  group-hover:py-14 group-hover:px-5 
-            inset-0 flex group-hover:opacity-100 transition-all duration-700"
-            >
+            <div className="absolute bg-header/85 flex-col  justify-end items-center opacity-0 group-hover:justify-between  group-hover:py-14 group-hover:px-5 inset-0 flex group-hover:opacity-100 transition-all duration-700">
               <button
                 onClick={() => FullSize(item?.img)}
-                className="opacity-0 group-hover:opacity-100 group-hover:flex items-center justify-center"
+                className="opacity-0 hidden group-hover:opacity-100 group-hover:flex items-center justify-center trans"
               >
                 <img className="h-14" src={plusIcon} alt="plus" />
               </button>
-              <div className="mt-8 text-white opacity-0 group-hover:opacity-100 group-hover:block">
+              <div className="mt-8 text-white opacity-0 group-hover:opacity-100 group-hover:block trans">
                 <h3 className="font-bold">{item?.header}</h3>
                 <p className="font-semibold text-sm">{item?.date}</p>
               </div>
