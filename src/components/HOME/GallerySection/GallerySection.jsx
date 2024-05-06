@@ -1,5 +1,6 @@
 import GalleryCard from "../../Global/GalleryCard/GalleryCard";
 import tabBtn from "../../../../data/home/GallerySection.json";
+import res from "./../../../../data/GallaryCard.json";
 import { useCallback, useEffect, useState } from "react";
 
 export default function GallerySection() {
@@ -7,24 +8,11 @@ export default function GallerySection() {
   const [Data, setData] = useState(null);
 
   const filterData = useCallback(() => {
-    const url = "../../../../data/GallaryCard.json";
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        return res.json();
-      })
-      .then((res) => {
-        // Filter data based on the tag
-        const filteredData = res.filter((item) =>
-          item.tag.split(" ").includes(Tag)
-        );
-        // Set the filtered data to state
-        setData(filteredData);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, [Tag]); // Depend on 'tag' to trigger when the tag changes
+    const filteredData = res.filter((item) =>
+      item.tag.split(" ").includes(Tag)
+    );
+    setData(filteredData);
+  }, [Tag]);
 
   useEffect(() => {
     filterData();
