@@ -3,7 +3,7 @@ import Data from "./../../../data/upcomingEvent.json";
 
 export default function NoticeSection() {
   return (
-    <main className="padding py-12">
+    <main className="bg-responsibility padding py-12">
       {Data.map((item, index) => (
         <section
           key={index}
