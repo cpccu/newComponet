@@ -11,7 +11,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} /> {/* Changed to index */}
+          <Route index element={<Home />} />
           <Route path="event" element={<Event />} />
           <Route path="gallery" element={<ComingSoon />} />
           <Route path="about" element={<ComingSoon />} />
