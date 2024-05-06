@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./LayOut";
 import Home from "./components/Layout/Home";
+import Event from "./components/Layout/Event";
 import ComingSoon from "./components/ComingSoon";
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
-          <Route path="/event" element={<ComingSoon />} />
+          <Route path="/event" element={<Event />} />
           <Route path="/gallery" element={<ComingSoon />} />
           <Route path="/about" element={<ComingSoon />} />
           <Route path="/contact" element={<ComingSoon />} />
