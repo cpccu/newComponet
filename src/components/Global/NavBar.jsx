@@ -172,7 +172,7 @@ export function NavItem({ setOpen }) {
                     />
                   </button>
 
-                  <ul className="hidden lg:shadow-xl group-hover:flex flex-col lg:items-center bg-white lg:absolute top-full left-0 ml-5 trans z-10">
+                  <ul className="hidden lg:shadow-xl group-hover:flex flex-col lg:items-center bg-white lg:absolute top-full left-0 ml-5 lg:ml-0 trans z-10">
                     {item?.element.map((ele, num) => (
                       <NavLink
                         to={ele?.path}
