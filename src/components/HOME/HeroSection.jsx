@@ -38,7 +38,7 @@ export default function HeroSection() {
           to={target || ""}
           spy={true}
           smooth={true}
-          offset={-40}
+          offset={-60}
           duration={900}
           animate={{ duration: 900, easing: "easeInOutCubic" }}
         >
