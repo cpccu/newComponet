@@ -1,22 +1,40 @@
 [
   {
     "page": "Home",
-    "path": "/"
+    "path": "/",
+    "level": 0
   },
   {
     "page": "Event",
-    "path": "/event"
+    "path": "/event",
+    "level": 0
   },
   {
     "page": "Gallery",
-    "path": "/gallery"
+    "path": "/gallery",
+    "level": 0
   },
   {
     "page": "About",
-    "path": "/about"
+    "level": 1,
+    "element": [
+      {
+        "page": "History",
+        "path": "/about/history"
+      },
+      {
+        "page": "Committee",
+        "path": "/about/committee"
+      },
+      {
+        "page": "member",
+        "path": "/about/member"
+      }
+    ]
   },
   {
     "page": "Contact",
-    "path": "/contact"
+    "path": "/contact",
+    "level": 0
   }
 ]

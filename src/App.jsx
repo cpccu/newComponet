@@ -5,6 +5,7 @@ import Event from "./components/Layout/Event";
 import ComingSoon from "./components/ComingSoon";
 import { useEffect } from "react";
 import Gallery from "./components/Layout/Gallery";
+import AboutLayout from "./AboutLayout";
 
 export default function App() {
   return (
@@ -15,7 +16,12 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="event" element={<Event />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="about" element={<ComingSoon />} />
+          <Route path="about" element={<AboutLayout />}>
+            <Route index element={<ComingSoon />} />
+            <Route path="history" element={<ComingSoon />} />
+            <Route path="committee" element={<ComingSoon />} />
+            <Route path="member" element={<ComingSoon />} />
+          </Route>
           <Route path="contact" element={<ComingSoon />} />
         </Route>
       </Routes>

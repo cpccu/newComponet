@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import NavOpen from "./../../assets/icons/navOpen.svg";
 import NavClose from "./../../assets/icons/navClose.svg";
 import InstitudeInfo from "../../../data/global/institude.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Data from "../../../data/global/navBar.json";
 
 export default function NavBar() {
@@ -53,7 +55,7 @@ export default function NavBar() {
 
   return (
     <main
-      className={` ${
+      className={`${
         fixed && "md:sticky shadow-xl"
       } sticky top-0 md:static transition-all duration-1000 z-50 bg-white flex items-center justify-between padding`}
     >
@@ -105,35 +107,99 @@ export default function NavBar() {
                 <p className="text-sm">{InstitudeInfo?.shortName}</p>
               </div>
             </section>
-
-            {/* <button onClick={navHandler}>
-              <img className="h-6" src={NavClose} alt="close" />
-            </button> */}
           </section>
           {/* nav link */}
-          <ul className="flex flex-col lg:flex-row z-50 mt-10 lg:mt-0">
-            {Data &&
-              Data.map((item, index) => (
-                <li key={index}>
-                  <NavLink
-                    to={item?.path}
-                    className={({ isActive }) =>
-                      ` ${
-                        isActive
-                          ? "bg-header text-white lg:border-b-4 lg:border-header lg:text-black lg:bg-header/20 lg:hover:bg-header/20"
-                          : "hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
-                      } block px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold`
-                    }
-                    onClick={() => setOpen(false)}
-                  >
-                    {item?.page}
-                  </NavLink>
-                </li>
-              ))}
-          </ul>
+          <NavItem setOpen={setOpen} />
         </nav>
         {/* nav link end */}
       </section>
     </main>
   );
+}
+
+export function NavItem({ setOpen }) {
+  const [isOpen, setIsOpen] = useState(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (
+      pathname == "/about/history" ||
+      pathname == "/about/committee" ||
+      pathname == "/about/member"
+    ) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [pathname]);
+
+  return (
+    <ul className="flex flex-col lg:flex-row z-50 mt-10 lg:mt-0">
+      {Data
+        ? Data.map((item, index) => {
+            if (item.level === 0) {
+              return (
+                <li key={index}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      ` ${
+                        isActive
+                          ? "bg-header text-white lg:border-b-4 lg:border-header lg:text-black lg:bg-header/20 lg:hover:bg-header/20"
+                          : "hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
+                      } block px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold capitalize`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.page}
+                  </NavLink>
+                </li>
+              );
+            } else {
+              return (
+                <li key={index} className="group relative">
+                  <button
+                    className={`${
+                      isOpen
+                        ? "bg-header text-white lg:border-b-4 lg:border-header lg:text-black lg:bg-header/20 lg:hover:bg-header/20"
+                        : "group-hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
+                    } w-full flex items-center gap-3 px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold capitalize`}
+                  >
+                    <p>{item?.page}</p>
+                    <FontAwesomeIcon
+                      className="group-hover:-rotate-180 trans"
+                      icon={faChevronDown}
+                    />
+                  </button>
+
+                  <ul className="hidden border shadow-xl group-hover:flex flex-col lg:items-center bg-white absolute top-full left-0 w-full  py-3 trans z-10">
+                    {item?.element.map((ele, num) => (
+                      <NavLink
+                        to={ele?.path}
+                        className={({ isActive }) =>
+                          `${
+                            isActive ? "text-header" : "text-gray-900"
+                          }  flex w-full hover:bg-header/20 cursor-pointer py-1 capitalize font-semibold`
+                        }
+                        onClick={() => setOpen(false)}
+                      >
+                        <li className="w-full px-6" key={num}>
+                          {ele?.page}
+                        </li>
+                      </NavLink>
+                    ))}
+                  </ul>
+                </li>
+              );
+            }
+          })
+        : null}
+    </ul>
+  );
+}
+
+{
+  /* <li className="px-5 lg:w-full lg:flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-header/20 cursor-pointer py-1">
+Home
+</li> */
 }
