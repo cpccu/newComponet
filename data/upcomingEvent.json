@@ -4,7 +4,7 @@
     "alt": "Alternative text for the image",
     "headLine": "Headline for the upcoming data",
     "textContext": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quam illum fugiat! Deserunt labore nulla eos ipsum tempore perspiciatis libero cupiditate recusandae officia voluptas laboriosam, enim, facere sapiente, in pariatur?",
-    "btnText": "Button text",
+    "btnText": "registration",
     "btnLink": "https://example.com",
     "date": "2024-06-12"
   },
@@ -13,7 +13,7 @@
     "alt": "Alternative text for the image",
     "headLine": "Headline for the upcoming data",
     "textContext": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quam illum fugiat! Deserunt labore nulla eos ipsum tempore perspiciatis libero cupiditate recusandae officia voluptas laboriosam, enim, facere sapiente, in pariatur?",
-    "btnText": "Button text",
+    "btnText": "registration",
     "btnLink": "https://example.com",
     "date": "2024-07-16"
   },
@@ -22,7 +22,7 @@
     "alt": "Alternative text for the image",
     "headLine": "Headline for the upcoming data",
     "textContext": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quam illum fugiat! Deserunt labore nulla eos ipsum tempore perspiciatis libero cupiditate recusandae officia voluptas laboriosam, enim, facere sapiente, in pariatur?",
-    "btnText": "Button text",
+    "btnText": "registration",
     "btnLink": "https://example.com",
     "date": "2024-08-01"
   },
@@ -31,7 +31,7 @@
     "alt": "Alternative text for the image",
     "headLine": "Headline for the upcoming data",
     "textContext": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quam illum fugiat! Deserunt labore nulla eos ipsum tempore perspiciatis libero cupiditate recusandae officia voluptas laboriosam, enim, facere sapiente, in pariatur?",
-    "btnText": "Button text",
+    "btnText": "registration",
     "btnLink": "https://example.com",
     "date": "2024-09-01"
   }
