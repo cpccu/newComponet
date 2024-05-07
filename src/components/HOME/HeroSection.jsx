@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import Hero from "../../../data/home/Hero.json";
+import OurMissionScroll from "../../Context/OurMessionScroll/OurMessionScroll";
+import { Link as ScrollMission } from "react-scroll";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
+  const { target } = useContext(OurMissionScroll);
+  const navigate = useNavigate();
+
+  const goToAbout = () => {
+    navigate("/about");
+  };
+
   return (
     <main
       style={{
@@ -23,11 +34,23 @@ export default function HeroSection() {
         {Hero?.context}
       </p>
       <div className="flex gap-5">
-        <button className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-header hover:bg-white hover:text-black trans">
-          {Hero?.btn1Text}
-        </button>
+        <ScrollMission
+          to={target || ""}
+          spy={true}
+          smooth={true}
+          offset={-40}
+          duration={900}
+          animate={{ duration: 900, easing: "easeInOutCubic" }}
+        >
+          <button className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-header hover:bg-white hover:text-black trans">
+            {Hero?.btn1Text}
+          </button>
+        </ScrollMission>
 
-        <button className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-white text-black hover:bg-header hover:text-white trans">
+        <button
+          onClick={goToAbout}
+          className="uppercase md:text-[1.2rem] lg:text-[1.3rem] font-semibold px-6 py-3 bg-white text-black hover:bg-header hover:text-white trans"
+        >
           {Hero?.btn2Text}
         </button>
       </div>

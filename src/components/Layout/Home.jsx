@@ -1,3 +1,4 @@
+import OurMissionScrollProvider from "../../Context/OurMessionScroll/OurMessonScrollProvider";
 import HeroSection from "../HOME/HeroSection";
 import EventLayout from "./../HOME/eventUpcoming/EventLayout";
 import OurMission from "./../HOME/OurMission";
@@ -7,7 +8,7 @@ import GallerySection from "../HOME/GallerySection";
 
 export default function Home() {
   return (
-    <main>
+    <OurMissionScrollProvider>
       <HeroSection />
       <section className=" lg:h-48 h-full relative bg-white">
         <EventLayout
@@ -20,6 +21,6 @@ export default function Home() {
       <OurResponsibility />
       <Count />
       <GallerySection />
-    </main>
+    </OurMissionScrollProvider>
   );
 }

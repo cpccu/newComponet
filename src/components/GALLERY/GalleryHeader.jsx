@@ -1,11 +1,6 @@
-import { useContext } from "react";
-import { Link as ScrollEvent } from "react-scroll";
-import EventScroll from "../../Context/EventScroll/EventScroll";
-import Data from "./../../../data/event/event.json";
+import Data from "./../../../data/gallery/gallery.json";
 
-export default function EventHeader() {
-  const { scrollTarget } = useContext(EventScroll);
-
+export default function GalleryHeader() {
   return (
     <header
       style={{
@@ -21,19 +16,19 @@ export default function EventHeader() {
       </h1>
       <p>{Data?.conText}</p>
 
-      <ScrollEvent
-        to={scrollTarget || ""}
-        spy={true}
-        smooth={true}
-        offset={-50}
-        duration={900}
-        animate={{ duration: 900, easing: "easeInOutCubic" }}
+      <div
+      // to={scrollTarget}
+      // spy={true}
+      // smooth={true}
+      // offset={-50}
+      // duration={900}
+      // animate={{ duration: 900, easing: "easeInOutCubic" }}
       >
         <button className="py-3 px-12 font-bold uppercase bg-header hover:bg-white hover:text-gray-700 trans mt-5">
           {Data?.btnText}
         </button>
         {/* target to scroll */}
-      </ScrollEvent>
+      </div>
     </header>
   );
 }
