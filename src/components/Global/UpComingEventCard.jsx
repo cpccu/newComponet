@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import cn from "../../../lib/cn.js";
 
 const UpComingEventCard = ({ data, clName }) => {
@@ -23,7 +23,7 @@ const UpComingEventCard = ({ data, clName }) => {
         <div className="h-[4%] bg-black/50"></div>
       </section>
       <section className="h-full lg:col-span-4 flex flex-col items-start gap-4">
-        <TimeBox />
+        <TimeBox date={data?.date} />
         <h1 className="text-2xl font-semibold">{data?.headLine}</h1>
         <p className="font-[450]">{data?.textContext}</p>
 
@@ -40,34 +40,62 @@ const UpComingEventCard = ({ data, clName }) => {
 
 export default UpComingEventCard;
 
-function TimeBox() {
+function TimeBox({ date }) {
+  const calculateTimeLeft = () => {
+    const difference = +new Date(date) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  const { days, hours, minutes, seconds } = timeLeft;
+
   return (
     <main className="flex gap-5">
       <section className="flex flex-col items-center font-bold gap-1">
         <div>Days</div>
         <div className="border text-center px-3 py-1 font-bold text-xl bg-black/70 trans">
-          01
+          {days || "00"}
         </div>
       </section>
 
       <section className="flex flex-col items-center font-bold gap-1">
         <div>Hr</div>
         <div className="border text-center px-3 py-1 font-bold text-xl bg-black/70">
-          00
+          {hours || "00"}
         </div>
       </section>
 
       <section className="flex flex-col items-center font-bold gap-1">
         <div>Min</div>
         <div className="border text-center px-3 py-1 font-bold text-xl bg-black/70">
-          00
+          {minutes || "00"}
         </div>
       </section>
 
       <section className="flex flex-col items-center font-bold gap-1">
         <div>Sec</div>
         <div className="border text-center px-3 py-1 font-bold text-xl bg-black/70">
-          00
+          {seconds || "00"}
         </div>
       </section>
 
