@@ -19,6 +19,7 @@ export default {
         count: "#161F37",
         responsibility: "#ECF1F5",
         textWhite: "E7E7E7",
+        scroll: "#334caf",
       },
       fontFamily: {
         custom: ["Inria Sans"],

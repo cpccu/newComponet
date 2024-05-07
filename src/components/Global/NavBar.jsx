@@ -21,18 +21,6 @@ export default function NavBar() {
     return navigate("/");
   };
 
-  const goTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const goAnotherpage = () => {
-    goTop();
-    setOpen(false);
-  };
-
   useEffect(() => {
     const scrollBar = () => {
       if (Math.ceil(window.scrollY) > 180) {
@@ -136,7 +124,7 @@ export default function NavBar() {
                           : "hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
                       } block px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold`
                     }
-                    onClick={goAnotherpage}
+                    onClick={() => setOpen(false)}
                   >
                     {item?.page}
                   </NavLink>
