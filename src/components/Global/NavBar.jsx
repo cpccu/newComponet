@@ -172,14 +172,14 @@ export function NavItem({ setOpen }) {
                     />
                   </button>
 
-                  <ul className="hidden lg:shadow-xl group-hover:flex flex-col lg:items-center bg-white lg:py-3  lg:absolute top-full left-0 ml-3 trans z-10">
+                  <ul className="hidden lg:shadow-xl group-hover:flex flex-col lg:items-center bg-white lg:absolute top-full left-0 ml-5 trans z-10">
                     {item?.element.map((ele, num) => (
                       <NavLink
                         to={ele?.path}
                         className={({ isActive }) =>
                           `${
                             isActive ? "text-header" : "text-gray-900"
-                          }  flex w-full hover:bg-header/20 cursor-pointer py-1 capitalize font-semibold border-b lg:border-none`
+                          }  flex w-full hover:bg-header/20 cursor-pointer py-1 lg:py-2 capitalize font-semibold border-b`
                         }
                         onClick={() => setOpen(false)}
                       >
