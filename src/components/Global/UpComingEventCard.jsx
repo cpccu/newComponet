@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "./../../../../lib/cn.js";
+import cn from "../../../lib/cn.js";
 
 const UpComingEventCard = ({ data, clName }) => {
   return (

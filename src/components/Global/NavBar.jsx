@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import NavOpen from "./../../../assets/icons/navOpen.svg";
-import NavClose from "./../../../assets/icons/navClose.svg";
-import InstitudeInfo from "./../../../../data/global/institude.json";
-import Data from "../../../../data/global/navBar.json";
+import NavOpen from "./../../assets/icons/navOpen.svg";
+import NavClose from "./../../assets/icons/navClose.svg";
+import InstitudeInfo from "../../../data/global/institude.json";
+import Data from "../../../data/global/navBar.json";
 
 export default function NavBar() {
   const navigate = useNavigate();

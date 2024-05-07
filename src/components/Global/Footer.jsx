@@ -5,7 +5,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import InstituteInfo from "./../../../../data/global/institude.json";
+import InstituteInfo from "../../../data/global/institude.json";
 import { Link } from "react-router-dom";
 
 export default function Footer() {

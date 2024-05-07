@@ -1,4 +1,4 @@
-import Hero from "../../../../data/home/Hero.json";
+import Hero from "../../../data/home/Hero.json";
 
 export default function HeroSection() {
   return (

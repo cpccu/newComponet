@@ -1,9 +1,9 @@
-import HeroSection from "./../HOME/HeroSection/HeroSection";
+import HeroSection from "../HOME/HeroSection";
 import EventLayout from "./../HOME/eventUpcoming/EventLayout";
-import OurMission from "./../HOME/OurMission.jsx/OurMission";
-import OurResponsibility from "./../HOME/OurResponsibility/OurResponsibility";
-import Count from "../HOME/Count/Count";
-import GallerySection from "../HOME/GallerySection/GallerySection";
+import OurMission from "./../HOME/OurMission";
+import OurResponsibility from "../HOME/OurResponsibility";
+import Count from "../HOME/Count";
+import GallerySection from "../HOME/GallerySection";
 
 export default function Home() {
   return (

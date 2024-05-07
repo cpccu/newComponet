@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import UpComingEventCard from "./UpComingEventCard";
+import UpComingEventCard from "../../Global/UpComingEventCard.jsx";
 import "./Event.css";
 import cn from "./../../../../lib/cn.js";
 import data from "./../../../../data/upcomingEvent.json";
@@ -45,7 +45,7 @@ const EventLayout = ({ clName }) => {
   return data ? (
     <div
       className={cn(
-        "text-white bg-header relative z-30 px-5 pt-5 pb-3 md:px-10 md:pt-10 md:pb-8 lg:py-12 lg:pt-12 lg:pb-10 lg:px-12 ",
+        "text-white bg-header relative z-30 p-5 md:p-10 lg:p-12 ",
         clName
       )}
     >

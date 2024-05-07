@@ -1,6 +1,6 @@
-import GalleryCard from "../../Global/GalleryCard/GalleryCard";
-import tabBtn from "../../../../data/home/GallerySection.json";
-import res from "./../../../../data/GallaryCard.json";
+import GalleryCard from "../Global/GalleryCard";
+import tabBtn from "../../../data/home/GallerySection.json";
+import res from "../../../data/GallaryCard.json";
 import { useCallback, useEffect, useState } from "react";
 
 export default function GallerySection() {
@@ -43,8 +43,9 @@ export default function GallerySection() {
         ))}
       </div>
 
-      {/* Gallery cards */}
+      {/* Gallery cards start */}
       <GalleryCard Data={Data} />
+      {/* Gallery cards end */}
     </section>
   );
 }
