@@ -1,6 +1,11 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useContext } from "react";
+import { Link } from "react-scroll";
+
+import EventScroll from "../../Context/EventScroll/EventScroll";
 
 export default function EventHeader() {
+  const { scrollTarget } = useContext(EventScroll);
+
   return (
     <header
       style={{
@@ -18,9 +23,19 @@ export default function EventHeader() {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, totam.
       </p>
 
-      <button className="py-3 px-12 font-bold uppercase bg-header hover:bg-white hover:text-gray-700 trans mt-5">
-        Let's See
-      </button>
+      <Link
+        to={scrollTarget}
+        spy={true}
+        smooth={true}
+        offset={-50}
+        duration={500}
+        animate={{ duration: 500, easing: "easeInOutCubic" }}
+      >
+        <button className="py-3 px-12 font-bold uppercase bg-header hover:bg-white hover:text-gray-700 trans mt-5">
+          Let's see
+        </button>{" "}
+        {/* target to scroll */}
+      </Link>
     </header>
   );
 }
