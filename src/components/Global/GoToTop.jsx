@@ -29,7 +29,7 @@ export default function GoToTop() {
       onClick={goTop}
       className={`${
         visible ? "fixed" : "hidden"
-      } z-40 bottom-6 right-2 lg:right-3 bg-scroll h-11 w-11 rounded-full flex items-center justify-center`}
+      } z-40 bottom-6 right-2 lg:right-3 bg-scroll hover:bg-headerHover h-11 w-11 rounded-full flex items-center justify-center trans`}
     >
       <FontAwesomeIcon className="text-xl text-white" icon={faAngleUp} />
     </button>
