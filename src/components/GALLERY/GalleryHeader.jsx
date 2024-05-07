@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import GalleryScroll from "../../Context/GalleryScroll/GalleryScroll";
+import { Link as ScrollGallery } from "react-scroll";
 import Data from "./../../../data/gallery/gallery.json";
 
 export default function GalleryHeader() {
+  const { scrollTarget } = useContext(GalleryScroll);
+
   return (
     <header
       style={{
@@ -16,19 +21,19 @@ export default function GalleryHeader() {
       </h1>
       <p>{Data?.conText}</p>
 
-      <div
-      // to={scrollTarget}
-      // spy={true}
-      // smooth={true}
-      // offset={-50}
-      // duration={900}
-      // animate={{ duration: 900, easing: "easeInOutCubic" }}
+      <ScrollGallery
+        to={scrollTarget || ""}
+        spy={true}
+        smooth={true}
+        offset={-50}
+        duration={900}
+        animate={{ duration: 900, easing: "easeInOutCubic" }}
       >
         <button className="py-3 px-12 font-bold uppercase bg-header hover:bg-white hover:text-gray-700 trans mt-5">
           {Data?.btnText}
         </button>
         {/* target to scroll */}
-      </div>
+      </ScrollGallery>
     </header>
   );
 }
