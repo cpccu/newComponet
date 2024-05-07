@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import EventScroll from "./EventScroll";
 
 export default function EventScrollProvider({ children }) {
-  const [target, setTarget] = useState(null);
+  const scrollTarget = useRef(null);
 
   return (
-    <EventScroll.Provider value={{ target, setTarget }}>
+    <EventScroll.Provider value={{ scrollTarget }}>
       {children}
     </EventScroll.Provider>
   );
