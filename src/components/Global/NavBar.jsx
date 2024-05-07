@@ -197,9 +197,3 @@ export function NavItem({ setOpen }) {
     </ul>
   );
 }
-
-{
-  /* <li className="px-5 lg:w-full lg:flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-header/20 cursor-pointer py-1">
-Home
-</li> */
-}

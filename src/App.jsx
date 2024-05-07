@@ -14,14 +14,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="event" element={<Event />} />
-          <Route path="gallery" element={<Gallery />} />
           <Route path="about" element={<AboutLayout />}>
             <Route index element={<ComingSoon />} />
             <Route path="history" element={<ComingSoon />} />
             <Route path="committee" element={<ComingSoon />} />
             <Route path="member" element={<ComingSoon />} />
           </Route>
+          <Route path="event" element={<Event />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<ComingSoon />} />
         </Route>
       </Routes>
