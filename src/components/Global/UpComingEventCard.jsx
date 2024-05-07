@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import cn from "../../../lib/cn.js";
 
 const UpComingEventCard = ({ data, clName }) => {
@@ -26,13 +27,16 @@ const UpComingEventCard = ({ data, clName }) => {
         <TimeBox date={data?.date} />
         <h1 className="text-2xl font-semibold">{data?.headLine}</h1>
         <p className="font-[450]">{data?.textContext}</p>
-
-        <button
-          className="bg-black/30 text-white font-bold uppercase px-5 py-2 
-        hover:text-gray-600 hover:bg-white border-[3px] border-white trans"
-        >
-          {data?.btnText}
-        </button>
+        {data?.btnLink ? (
+          <Link to={data?.btnLink} target="_blank" rel="noopener noreferrer">
+            <button
+              className="bg-black/30 text-white font-bold uppercase px-5 py-2 
+          hover:text-gray-600 hover:bg-white border-[3px] border-white trans"
+            >
+              {data?.btnText}
+            </button>
+          </Link>
+        ) : null}
       </section>
     </main>
   );
