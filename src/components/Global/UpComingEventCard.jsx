@@ -6,21 +6,17 @@ const UpComingEventCard = ({ data, clName }) => {
   return (
     <main
       className={cn(
-        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default lg:h-[16.5rem]",
+        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default lg:max-h-[16.5rem] overflow-hidden",
         clName
       )}
     >
-      <section className="lg:col-span-3 lg:h-full">
-        <div className="h-[82%]">
-          <img
-            className="h-full w-full object-cover"
-            src={data?.img}
-            alt={data?.alt}
-          />
-        </div>
-        <div className="h-[14%] bg-white text-gray-600 text-2xl font-bold flex items-center justify-center">
-          It's {data?.date}
-        </div>
+      <section className="lg:col-span-3 max-h-[26rem] lg:h-full overflow-hidden ">
+        <img
+          className="h-full w-full object-cover"
+          src={data?.img}
+          alt={data?.alt}
+        />
+
         <div className="h-[4%] bg-black/50"></div>
       </section>
       <section className="h-full lg:col-span-4 flex flex-col items-start gap-4">
