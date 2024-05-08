@@ -11,6 +11,7 @@ export default function BlogPostLayout() {
   const [Tag, setTag] = useState("all");
   const [Data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [rows, setRows] = useState([]);
 
   const filterData = useCallback(() => {
     const filteredData = res.filter((item) =>
@@ -30,10 +31,6 @@ export default function BlogPostLayout() {
   const pageItem = 9;
   const pageNmber = Math.ceil(Data.length / pageItem);
 
-  const handlePaginationClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
   useEffect(() => {
     const startIdx = currentPage * pageItem;
     const endIdx = startIdx + pageItem;
@@ -41,7 +38,9 @@ export default function BlogPostLayout() {
     setRows(rows);
   }, [Data, currentPage, pageItem]);
 
-  const [rows, setRows] = useState([]);
+  const handlePaginationClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   // Calculate page numbers for pagination
   let pageIndex = [];
