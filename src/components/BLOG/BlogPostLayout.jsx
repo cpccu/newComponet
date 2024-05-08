@@ -29,7 +29,19 @@ export default function BlogPostLayout() {
 
   const pageItem = 9;
   const pageNmber = Math.ceil(Data.length / pageItem);
-  const rows = Data.slice(currentPage * pageItem, (currentPage + 1) * pageItem);
+
+  const handlePaginationClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  useEffect(() => {
+    const startIdx = currentPage * pageItem;
+    const endIdx = startIdx + pageItem;
+    const rows = Data.slice(startIdx, endIdx);
+    setRows(rows);
+  }, [Data, currentPage, pageItem]);
+
+  const [rows, setRows] = useState([]);
 
   // Calculate page numbers for pagination
   let pageIndex = [];
@@ -42,10 +54,6 @@ export default function BlogPostLayout() {
   } else {
     pageIndex = [1, currentPage + 1, currentPage + 2, pageNmber];
   }
-
-  const handlePaginationClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <section id="blogMainLayout" className="bg-responsibility py-7 md:py-12">
@@ -83,7 +91,9 @@ export default function BlogPostLayout() {
           disabled={currentPage === 0}
         >
           <FontAwesomeIcon
-            className={`${currentPage < 1 && "text-gray-400"}`}
+            className={`${
+              currentPage < 1 && "text-gray-400"
+            } transform rotate-180`}
             icon={faChevronLeft}
           />
         </button>
@@ -107,9 +117,7 @@ export default function BlogPostLayout() {
           disabled={currentPage === pageNmber - 1}
         >
           <FontAwesomeIcon
-            className={`${
-              currentPage > pageNmber - 2 && "text-gray-400"
-            } transform rotate-180`}
+            className={`${currentPage > pageNmber - 2 && "text-gray-400"}`}
             icon={faChevronLeft}
           />
         </button>
