@@ -32,6 +32,11 @@
     "path": "/gallery",
     "level": 0
   },
+  {
+    "page": "Blog",
+    "path": "/blog",
+    "level": 0
+  },
 
   {
     "page": "Contact",
