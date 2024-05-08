@@ -12,7 +12,7 @@ export default function BlogPostLayout() {
   }, []);
 
   return (
-    <section id="blogMainLayout" className="bg-responsibility py-12">
+    <section id="blogMainLayout" className="bg-responsibility py-7 md:py-12">
       <div className="font-semibold text-sm md:text-lg flex flex-wrap items-center justify-center gap-3 md:gap-5 lg:gap-7 py-7 md:py-14">
         {FilterBtn.map((item, index) => (
           <button
@@ -23,7 +23,7 @@ export default function BlogPostLayout() {
           </button>
         ))}
       </div>
-      <main className="py-10 px-[.5em] md:px-[1.5em] lg:px-[2.9em] xl:px-[7em] grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-7">
+      <main className="py-5 md:py-10 px-[.5em] md:px-[1.5em] lg:px-[2.9em] xl:px-[7em] grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-7">
         {Data.map((item, index) => (
           <BlogMainCard Data={item} />
         ))}
