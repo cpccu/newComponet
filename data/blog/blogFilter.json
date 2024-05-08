@@ -4,10 +4,6 @@
     "tag": "all"
   },
   {
-    "btnText": "teacher",
-    "tag": "teacher"
-  },
-  {
     "btnText": "Alumni",
     "tag": "alumni"
   },
