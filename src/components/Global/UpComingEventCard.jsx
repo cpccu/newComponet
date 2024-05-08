@@ -6,11 +6,11 @@ const UpComingEventCard = ({ data, clName }) => {
   return (
     <main
       className={cn(
-        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default lg:max-h-[16.5rem] overflow-hidden",
+        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default overflow-hidden",
         clName
       )}
     >
-      <section className="lg:col-span-3 max-h-[26rem] lg:h-full overflow-hidden ">
+      <section className="lg:col-span-3 h-[16.5em] overflow-hidden ">
         <img
           className="h-full w-full object-cover"
           src={data?.img}
