@@ -9,6 +9,7 @@ export default function GalleryMain() {
   const { setScrollTarget } = useContext(GalleryScroll);
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [rows, setRows] = useState([]);
 
   useEffect(() => {
     setScrollTarget("gallery");
@@ -17,13 +18,16 @@ export default function GalleryMain() {
   const pageItem = 4;
   const pageNmber = Math.ceil(Data.length / pageItem);
 
+  useEffect(() => {
+    const startIdx = currentPage * pageItem;
+    const endIdx = startIdx + pageItem;
+    const rows = Data.slice(startIdx, endIdx);
+    setRows(rows);
+  }, [Data, currentPage, pageItem]);
+
   const handlePaginationClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-  const startIdx = currentPage * pageItem;
-  const endIdx = startIdx + pageItem;
-  const rows = Data.slice(startIdx, endIdx);
 
   // Calculate page numbers for pagination
   let pageIndex = [];
