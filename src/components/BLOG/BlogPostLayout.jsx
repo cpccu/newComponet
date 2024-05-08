@@ -13,7 +13,7 @@ export default function BlogPostLayout() {
   return (
     <main
       id="blogMainLayout"
-      className="bg-responsibility py-20 md:py-28 lg:py-32 padding grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-7"
+      className="bg-responsibility py-20 md:py-28 lg:py-32 px-[.5em] md:px-[1.5em] lg:px-[2.9em] xl:px-[7em] grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-7"
     >
       {Data.map((item, index) => (
         <BlogMainCard Data={item} />
