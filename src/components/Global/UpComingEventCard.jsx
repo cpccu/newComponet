@@ -6,7 +6,7 @@ const UpComingEventCard = ({ data, clName }) => {
   return (
     <main
       className={cn(
-        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default",
+        "grid lg:grid-cols-7 gap-7 lg:gap-5 cursor-default lg:h-[16.5rem]",
         clName
       )}
     >
@@ -25,8 +25,10 @@ const UpComingEventCard = ({ data, clName }) => {
       </section>
       <section className="h-full lg:col-span-4 flex flex-col items-start gap-4">
         <TimeBox date={data?.date} />
-        <h1 className="text-2xl font-semibold">{data?.headLine}</h1>
-        <p className="font-[450]">{data?.textContext}</p>
+        <h1 className="text-2xl font-semibold lg:line-clamp-1">
+          {data?.headLine}
+        </h1>
+        <p className="font-[450] lg:line-clamp-3">{data?.textContext}</p>
         {data?.btnLink ? (
           <Link to={data?.btnLink} target="_blank" rel="noopener noreferrer">
             <button
