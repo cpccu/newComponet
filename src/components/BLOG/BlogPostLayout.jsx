@@ -21,7 +21,7 @@ export default function BlogPostLayout() {
 
   useEffect(() => {
     filterData();
-  }, [filterData, Tag]); // Call filterData when the component mounts or when filterData or Tag changes
+  }, [filterData, Tag]);
 
   useEffect(() => {
     setBlogTarget("blogMainLayout");
@@ -40,7 +40,7 @@ export default function BlogPostLayout() {
   } else if (currentPage >= pageNmber - 2) {
     pageIndex = [1, pageNmber - 2, pageNmber - 1, pageNmber];
   } else {
-    pageIndex = [1, currentPage, currentPage + 1, pageNmber];
+    pageIndex = [1, currentPage + 1, currentPage + 2, pageNmber];
   }
 
   const handlePaginationClick = (pageNumber) => {
@@ -109,7 +109,7 @@ export default function BlogPostLayout() {
           <FontAwesomeIcon
             className={`${
               currentPage > pageNmber - 2 && "text-gray-400"
-            } rotate-180`}
+            } transform rotate-180`}
             icon={faChevronLeft}
           />
         </button>
