@@ -91,9 +91,7 @@ export default function BlogPostLayout() {
           disabled={currentPage === 0}
         >
           <FontAwesomeIcon
-            className={`${
-              currentPage < 1 && "text-gray-400"
-            } transform rotate-180`}
+            className={`${currentPage < 1 && "text-gray-400"}`}
             icon={faChevronLeft}
           />
         </button>
@@ -117,7 +115,9 @@ export default function BlogPostLayout() {
           disabled={currentPage === pageNmber - 1}
         >
           <FontAwesomeIcon
-            className={`${currentPage > pageNmber - 2 && "text-gray-400"}`}
+            className={`${
+              currentPage > pageNmber - 2 && "text-gray-400"
+            } transform rotate-180`}
             icon={faChevronLeft}
           />
         </button>
