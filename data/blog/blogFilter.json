@@ -4,11 +4,15 @@
     "tag": "all"
   },
   {
+    "btnText": "teacher",
+    "tag": "teacher"
+  },
+  {
     "btnText": "Alumni",
     "tag": "alumni"
   },
   {
-    "btnText": "executive member",
+    "btnText": "executive",
     "tag": "executive"
   },
   {
