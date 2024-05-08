@@ -119,6 +119,7 @@ export default function NavBar() {
 
 export function NavItem({ setOpen }) {
   const [isOpen, setIsOpen] = useState(null);
+  const [aboutOpen, setAboutOpen] = useState(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -159,20 +160,27 @@ export function NavItem({ setOpen }) {
               return (
                 <li key={index} className="group relative">
                   <button
-                    className={`${
+                    className={` ${
                       isOpen
                         ? "bg-header text-white lg:border-b-4 lg:border-header lg:text-black lg:bg-header/20 lg:hover:bg-header/20"
                         : "group-hover:text-header trans hover:bg-header/20 lg:hover:bg-transparent"
                     } w-full flex items-center gap-3 px-5 md:px-7 py-2 lg:py-7 cursor-pointer font-semibold capitalize`}
+                    onClick={() => setAboutOpen((prev) => !prev)}
                   >
                     <p>{item?.page}</p>
                     <FontAwesomeIcon
-                      className="group-hover:-rotate-180 trans"
+                      className={`${
+                        aboutOpen && "group-hover:-rotate-180"
+                      } lg:group-hover:-rotate-180 trans`}
                       icon={faChevronDown}
                     />
                   </button>
 
-                  <ul className="hidden lg:shadow-xl group-hover:flex flex-col lg:items-center bg-white lg:absolute top-full left-0 ml-5 lg:ml-0 trans z-10">
+                  <ul
+                    className={`${
+                      aboutOpen ? "group-hover:flex" : "hidden"
+                    } lg:hidden lg:shadow-xl lg:group-hover:flex flex-col lg:items-center bg-white lg:absolute top-full left-0 ml-5 lg:ml-0 trans z-10`}
+                  >
                     {item?.element.map((ele, num) => (
                       <NavLink
                         to={ele?.path}
