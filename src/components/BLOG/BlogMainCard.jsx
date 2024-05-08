@@ -6,7 +6,7 @@ export default function BlogMainCard({ Data }) {
       </section>
       <section className="flex flex-col items-start gap-4 p-6">
         <h1 className="text-2xl font-semibold">Lorem ipsum dolor sit amet.</h1>
-        <p>
+        <p className=" line-clamp-4">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
           tenetur nihil mollitia maxime tempora quis repellendus exercitationem!
           Nulla, quae sequi!
