@@ -41,7 +41,7 @@ export default function GalleryMain() {
     <>
       <main
         id="gallery"
-        className="flex flex-col gap-14 md:gap-20 lg:gap-32 py-10 md:py-20 lg:py-32 padding"
+        className="flex flex-col gap-14 md:gap-20 lg:gap-32 pt-10 md:pt-20 lg:pt-32 padding"
       >
         {rows.map((item, index) => (
           <GalleryBodyCard key={index} data={item} />
@@ -49,7 +49,7 @@ export default function GalleryMain() {
       </main>
 
       {/* start pagination  */}
-      <section className="flex items-center justify-center gap-5 py-8 md:py-10">
+      <section className="flex items-center justify-center gap-5 py-8 md:py-24">
         <button
           onClick={() => handlePaginationClick(Math.max(0, currentPage - 1))}
           disabled={currentPage === 0}
