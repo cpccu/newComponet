@@ -1,12 +1,25 @@
 export default function BlogMainCard({ Data }) {
   return (
     <main className="bg-white hover:-translate-y-3 trans">
-      <section className="overflow-hidden h-[250px] relative">
-        <img
-          className="h-full w-full object-cover"
-          src={Data?.img}
-          alt="image"
-        />
+      <section
+        className="overflow-hidden h-[250px] relative flex items-end gap-2"
+        style={{
+          backgroundImage: `url(${Data?.img}`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="flex py-3 px-5 bg-black/60 gap-4">
+          <img
+            className="h-10 rounded shrink-0"
+            src={Data?.profile}
+            alt="picture"
+          />
+          <p className="flex flex-col leading-5 shrink-0 text-white font-semibold text-sm">
+            {Data?.name} <span className="text-sm font-thin">{Data?.date}</span>{" "}
+          </p>
+        </div>
       </section>
       <section className="flex flex-col items-start gap-4 p-6">
         <h1 className="text-2xl font-semibold">{Data?.header}</h1>
