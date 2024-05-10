@@ -32,17 +32,17 @@ export default function Footer() {
 export function FooterInfo() {
   return (
     <main className="flex flex-col gap-5 col-span-2 md:col-span-1 lg:col-span-4">
-      <section className="flex items-center gap-2">
+      <section className="flex items-end gap-2">
         <img
-          className="h-14 filter grayscale"
+          className=" filter grayscale"
           src={InstituteInfo?.img}
           alt={InstituteInfo?.alt}
         />
         <div>
-          <h1 className="text-2xl font-bold font-custom">
+          <h1 className="text-4xl font-extrabold font-custom">
             {InstituteInfo?.name}
           </h1>
-          <p className="text-sm">{InstituteInfo?.shortName}</p>
+          <p className="text-lg">{InstituteInfo?.shortName}</p>
         </div>
       </section>
       <p>{InstituteInfo?.Footer1.conText}</p>
