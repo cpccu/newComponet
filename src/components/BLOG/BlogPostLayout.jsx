@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import BlogMainCard from "./BlogMainCard";
@@ -8,55 +14,55 @@ import res from "./../../../data/BlogPost.json";
 
 export default function BlogPostLayout() {
   const { setBlogTarget } = useContext(BlogScroll);
-  const [Tag, setTag] = useState("all");
-  const [Data, setData] = useState([]);
+  const [tag, setTag] = useState("all");
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [rows, setRows] = useState([]);
 
   const filterData = useCallback(() => {
     const filteredData = res.filter((item) =>
-      item.tag.split(" ").includes(Tag)
+      item.tag.split(" ").includes(tag.toLowerCase())
     );
     setData(filteredData);
-  }, [Tag]);
+  }, [tag]);
 
   useEffect(() => {
     filterData();
-  }, [filterData, Tag]);
+  }, [filterData, tag]);
 
   useEffect(() => {
     setBlogTarget("blogMainLayout");
   }, [setBlogTarget]);
 
   const pageItem = 9;
-  const pageNmber = Math.ceil(Data.length / pageItem);
+  const pageNumber = useMemo(() => {
+    return Math.ceil(data.length / pageItem);
+  }, [data, pageItem]);
 
   useEffect(() => {
     const startIdx = currentPage * pageItem;
     const endIdx = startIdx + pageItem;
-    const rows = Data.slice(startIdx, endIdx);
+    const rows = data.slice(startIdx, endIdx);
     setRows(rows);
-  }, [Data, currentPage, pageItem]);
+  }, [data, currentPage, pageItem]);
 
   const handlePaginationClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  // Calculate page numbers for pagination
   let pageIndex = [];
-  if (pageNmber <= 4) {
-    pageIndex = Array.from({ length: pageNmber }, (_, idx) => idx + 1);
+  if (pageNumber <= 4) {
+    pageIndex = Array.from({ length: pageNumber }, (_, idx) => idx + 1);
   } else if (currentPage < 2) {
-    pageIndex = [1, 2, 3, pageNmber];
-  } else if (currentPage >= pageNmber - 2) {
-    pageIndex = [1, pageNmber - 2, pageNmber - 1, pageNmber];
+    pageIndex = [1, 2, 3, pageNumber];
+  } else if (currentPage >= pageNumber - 2) {
+    pageIndex = [1, pageNumber - 2, pageNumber - 1, pageNumber];
   } else {
-    pageIndex = [1, currentPage + 1, currentPage + 2, pageNmber];
+    pageIndex = [1, currentPage + 1, currentPage + 2, pageNumber];
   }
 
   return (
     <section id="blogMainLayout" className="bg-responsibility py-7 md:py-12">
-      {/* filter data start */}
       <div className="font-semibold text-sm md:text-lg flex flex-wrap items-center justify-center gap-3 md:gap-5 lg:gap-7 py-7 md:py-14">
         {FilterBtn.map((item, index) => (
           <button
@@ -64,7 +70,7 @@ export default function BlogPostLayout() {
             key={index}
             className={`
             ${
-              item?.tag.toLowerCase() === Tag.toLowerCase()
+              item?.tag.toLowerCase() === tag.toLowerCase()
                 ? "bg-header text-white"
                 : "bg-header/15"
             } shrink-0 md:block px-2 md:px-6 lg:px-8 py-2  hover:bg-header hover:text-white trans capitalize`}
@@ -73,17 +79,13 @@ export default function BlogPostLayout() {
           </button>
         ))}
       </div>
-      {/* filter data end */}
 
-      {/* card start */}
       <main className="py-5 md:py-10 px-[.5em] md:px-[1.5em] lg:px-[2.9em] xl:px-[7em] grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-7">
         {rows.map((item, index) => (
           <BlogMainCard key={index} Data={item} />
         ))}
       </main>
-      {/* card end */}
 
-      {/* start pagination  */}
       <section className="flex items-center justify-center gap-5 py-8 md:py-10">
         <button
           onClick={() => handlePaginationClick(Math.max(0, currentPage - 1))}
@@ -109,19 +111,18 @@ export default function BlogPostLayout() {
         ))}
         <button
           onClick={() =>
-            handlePaginationClick(Math.min(pageNmber - 1, currentPage + 1))
+            handlePaginationClick(Math.min(pageNumber - 1, currentPage + 1))
           }
-          disabled={currentPage === pageNmber - 1}
+          disabled={currentPage === pageNumber - 1}
         >
           <FontAwesomeIcon
             className={`${
-              currentPage > pageNmber - 2 && "text-gray-400"
+              currentPage > pageNumber - 2 && "text-gray-400"
             } transform rotate-180`}
             icon={faChevronLeft}
           />
         </button>
       </section>
-      {/* end pagination */}
     </section>
   );
 }
