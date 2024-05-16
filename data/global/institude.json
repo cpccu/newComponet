@@ -17,6 +17,9 @@
     },
     {
       "url": "https://github.com/cpccu"
+    },
+    {
+      "url": "https://discord.gg/jStJuvU5Vs"
     }
   ],
 
@@ -32,24 +35,28 @@
     "header": "Usefull Link",
     "element": [
       {
-        "linkName": "code force",
-        "url": ""
+        "linkName": "Codeforces",
+        "url": "https://codeforces.com/ratings/organization/4353"
       },
       {
-        "linkName": "Hacker rank",
-        "url": ""
+        "linkName": "HackerRank",
+        "url": "https://hackerrank.com"
       },
       {
-        "linkName": "Becrownd",
-        "url": ""
+        "linkName": "Beecrowd",
+        "url": "https://judge.beecrowd.com/en/users/university/city"
       },
       {
-        "linkName": "Earth rank",
-        "url": ""
+        "linkName": "Hacker Earth",
+        "url": "https://www.hackerearth.com/"
       },
       {
-        "linkName": "code force",
-        "url": ""
+        "linkName": "Code Chef",
+        "url": "https://www.codechef.com/"
+      },
+      {
+        "linkName": "Vjudge",
+        "url": "https://vjudge.net/group/cpccu?r=e5n1ED2ylolVtUokPTkD"
       }
     ]
   },
@@ -57,23 +64,16 @@
     "header": "University",
     "element": [
       {
-        "linkName": "City university",
-        "url": ""
+        "linkName": "City University",
+        "url": "https://www.cityuniversity.ac.bd/"
       },
       {
-        "linkName": "Home page",
-        "url": ""
+        "linkName": "Faculty of CSE dept",
+        "url": "https://www.cityuniversity.ac.bd/dept-of-computer-science&engineering"
       },
+      
       {
-        "linkName": "All pages",
-        "url": ""
-      },
-      {
-        "linkName": "code force",
-        "url": ""
-      },
-      {
-        "linkName": "Footer page",
+        "linkName": "Join Us",
         "url": ""
       }
     ]
