@@ -4,19 +4,9 @@ import { FaRegUser } from "react-icons/fa";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { MdOutlineCall } from "react-icons/md";
 
-<<<<<<< HEAD
-=======
-import InstitudeInfo from "../../../data/global/institude.json";
-import { FaRegUser } from "react-icons/fa";
-import { IoMailOpenOutline } from "react-icons/io5";
-import { MdOutlineCall } from "react-icons/md";
-
->>>>>>> 0ead434cfe32165a3201137eab9472c86aa53b09
 export default function Header() {
   return (
-    <header
-      className={` bg-blue-950 hidden md:flex text-white justify-between items-center padding`}
-    >
+    <header className="bg-blue-950 hidden md:flex text-white justify-between items-center padding">
       <div className="flex gap-7 font-semibold text-sm">
         <p>
           <Link
@@ -32,7 +22,8 @@ export default function Header() {
             className="flex items-center justify-center gap-2"
             to={`tel:${InstitudeInfo?.phone}`}
           >
-            <MdOutlineCall size={25} /> <span>{InstitudeInfo?.phone}</span>
+            <MdOutlineCall size={25} />
+            <span>{InstitudeInfo?.phone}</span>
           </Link>
         </p>
       </div>
