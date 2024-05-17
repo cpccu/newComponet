@@ -10,25 +10,15 @@ export default function BlogMainCard({ Data }) {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="flex py-2  items-end px-5 bg-black/60 gap-4 w-full">
+        <div className="flex py-3 px-5 bg-black/60 gap-4">
           <img
-            className="absolute h-20 w-20 rounded-full ring-4 ring-black/60"
-            src={Data?.profile}
-            alt="profile"
-          />
-
-          <p className="ml-[7em] flex flex-col leading-5 shrink-0 text-white font-bold text-sm">
-            <span className="text-xl">{Data?.name}</span>
-            <span className="text-sm font-thin">{Data?.date}</span>{" "}
-          </p>
-          {/* <img
-            className="h-14 w-14 rounded-full shrink-0"
+            className="h-10 rounded shrink-0"
             src={Data?.profile}
             alt="picture"
           />
           <p className="flex flex-col leading-5 shrink-0 text-white font-semibold text-sm">
             {Data?.name} <span className="text-sm font-thin">{Data?.date}</span>{" "}
-          </p> */}
+          </p>
         </div>
       </section>
       <section className="flex flex-col items-start gap-4 p-6">

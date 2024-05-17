@@ -7,6 +7,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import InstituteInfo from "../../../data/global/institude.json";
 import { Link } from "react-router-dom";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -32,17 +33,17 @@ export default function Footer() {
 export function FooterInfo() {
   return (
     <main className="flex flex-col gap-5 col-span-2 md:col-span-1 lg:col-span-4">
-      <section className="flex items-end gap-2">
+      <section className="flex items-center gap-2">
         <img
-          className=" filter grayscale"
+          className="h-14 filter grayscale"
           src={InstituteInfo?.img}
           alt={InstituteInfo?.alt}
         />
         <div>
-          <h1 className="text-4xl font-extrabold font-custom">
+          <h1 className="text-2xl font-bold font-custom">
             {InstituteInfo?.name}
           </h1>
-          <p className="text-lg">{InstituteInfo?.shortName}</p>
+          <p className="text-sm">{InstituteInfo?.shortName}</p>
         </div>
       </section>
       <p>{InstituteInfo?.Footer1.conText}</p>
@@ -64,7 +65,7 @@ export function FooterInfo() {
 // Get In Touch section start
 
 export function Touch() {
-  const Allicon = [faFacebookF, faWhatsapp, faLinkedinIn, faGithub];
+  const Allicon = [faFacebookF, faWhatsapp, faLinkedinIn, faGithub, faDiscord];
   return (
     <section className="col-span-2 md:col-span-1 lg:col-span-3">
       <h1 className="text-2xl font-bold mb-3 md:mb-9">
@@ -88,7 +89,7 @@ export function Touch() {
           </button>
         </form>
 
-        <section className="flex gap-5">
+        <section className="flex gap-5 flex-wrap">
           {InstituteInfo?.media.map((item, index) => (
             <Link
               key={index}
@@ -96,8 +97,8 @@ export function Touch() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2">
-                <FontAwesomeIcon className="h-5" icon={Allicon[index]} />
+              <button className="bg-header hover:bg-headerHover trans flex items-center justify-center px-3 py-2 w-10 h-10">
+                <FontAwesomeIcon className="w-7 h-7" icon={Allicon[index]} />
               </button>
             </Link>
           ))}
