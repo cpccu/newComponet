@@ -4,6 +4,14 @@ import { FaRegUser } from "react-icons/fa";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { MdOutlineCall } from "react-icons/md";
 
+<<<<<<< HEAD
+=======
+import InstitudeInfo from "../../../data/global/institude.json";
+import { FaRegUser } from "react-icons/fa";
+import { IoMailOpenOutline } from "react-icons/io5";
+import { MdOutlineCall } from "react-icons/md";
+
+>>>>>>> 0ead434cfe32165a3201137eab9472c86aa53b09
 export default function Header() {
   return (
     <header
